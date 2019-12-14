@@ -1,0 +1,7 @@
+NEI <- readRDS("C:\\Users\\WELCOME\\Desktop\\coursera\\exdata_data_NEI_data (1)\\summarySCC_PM25.rds")
+SCC <- readRDS("C:\\Users\\WELCOME\\Desktop\\coursera\\exdata_data_NEI_data (1)\\Source_Classification_Code.rds")
+setwd("C:\\Users\\WELCOME\\Desktop\\coursera\\exdata_data_NEI_data (1)")
+png("plot1.png", width = 480, height = 480)
+Emissions <- tapply(NEI$Emissions, NEI$year, sum)
+barplot(Emissions, xlab = "Year", ylab = "Total Emissions PM2.5 Tons", col = c("RED","BLUE","GREEN","YELLOW"), main = "Total PM2.5 Emission From All Sources By Year")
+dev.off()
